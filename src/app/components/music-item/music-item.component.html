@@ -1,0 +1,39 @@
+<div class="row-album">
+<div class="card" style="width: 18rem;">
+  <img src={{musicItem.picture}} class="card-img-top" alt="...">
+  <div class="card-body">
+    <p class="card-text text-style">{{musicItem.name}}</p>
+    <p class="card-text text-style">Author: {{musicItem.author}}</p>
+    <p class="card-text text-style">Price in store: {{musicItem.price}}$</p>
+    <div class="button-division">
+      <button class="btn btn-primary btn-sm mt-3 mb-2" (click)="onPress()" (click)="addToCart(musicItem)">Add To Cart</button>
+      <button *ngIf="display" style="float: right; margin-top: 10px;" class="btn" (click)="removeFromCart(musicItem)" (click)="onPressReverse()"><img src="https://img.icons8.com/offices/30/000000/full-trash.png"/></button>
+      <button style="float: right; margin-top: 10px;" class="btn" (click)="openModal()"><i class="fas fa-info-circle info"></i></button>
+    </div>
+  </div>
+</div> 
+</div>
+
+<div class="modal" [style.display]="displayModal()" [style.background-color]="'#d1d1d1ad'" tabindex="-1" role="dialog">
+  <div class="modal-dialog modal-dialog-centered" role="document">
+    <div class="modal-content modal-background">
+      <div class="modal-header">
+        <h5 class="modal-title">{{ musicItem.name }}</h5>
+        <button type="button" class="close" (click)="openModal()">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <h6>Album information</h6>
+        <p>Author: {{ musicItem.author }}</p>
+        <p>Awards: {{ musicItem.awards }}</p>
+        <p>Release date: {{ musicItem.releaseDate }}</p>
+        <p>Genre: {{ musicItem.genre }}</p>
+        <p>Rating: {{ musicItem.rate}}★</p>
+        <hr />
+        <p>Total price is {{ musicItem.price }}$</p>
+      </div>
+    </div>
+    
+  </div>
+</div>

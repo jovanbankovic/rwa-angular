@@ -1,0 +1,40 @@
+.badge
+{
+    height: 20px;
+    width: 20px;
+    font-size: 11px;
+    color: white;
+    background-color: #35badb;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    top: 5px;
+    right: 5px;
+    border-radius: 50%;
+}
+
+.text-style
+{
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    font-size: 18px;
+    letter-spacing: 1px;
+}
+
+.style-center
+{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.row-cart
+{
+    display:flex;
+    flex-direction: column;
+}
+
+.modal-background
+{
+    background: linear-gradient(75deg, rgb(204, 255, 255), rgb(255, 204, 255));
+}

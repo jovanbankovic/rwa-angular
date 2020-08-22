@@ -1,0 +1,18 @@
+<div class="choose-item">
+    <div class="col-12 col-md-6 mb-4">
+        <app-search-music-item [allMusicGenres$]="allMusicGenres$" (musicGenreEmitter)="searchedMusicGenreName($event)" (musicItemToSearchEmitter)="searchedMusicItemName($event)"></app-search-music-item>
+    </div>
+</div>
+
+<!--ALL ALBUMS-->
+
+<div class="albums-show">
+  <img src="https://img.icons8.com/nolan/46/musical-notes.png"/>
+  <h1 class="tag-class2">All music albums</h1>
+  <img src="https://img.icons8.com/nolan/46/musical-notes.png"/>
+  <ul class="list-group list-albums">
+    <li class="list-group-item card-center background-li" *ngFor="let musicItem of musicItemsToDisplay">
+        <app-music-item [musicItem]="musicItem" (addToCart)="addToCart(foodItem)"></app-music-item>
+    </li>
+  </ul>
+</div>

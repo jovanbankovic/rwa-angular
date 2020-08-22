@@ -1,0 +1,30 @@
+<nav style="background: linear-gradient(75deg, rgb(204, 255, 255), rgb(255, 204, 255));"class="navbar navbar-expand-lg navbar-light bg-light">
+  <img src="https://img.icons8.com/nolan/64/audio-wave.png"/>
+  <a class="navbar-brand" href="#">Soundable</a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+    <ul class="navbar-nav mr-auto">
+      <li class="nav-item active">
+        <a class="nav-link" routerLink="/" href="#">Home <span class="sr-only">(current)</span></a>
+      </li>
+      <li class="nav-item active">
+        <a class="nav-link" routerLink="/topratings" href="#">Top rating's <span class="sr-only">(current)</span></a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" routerLink="/about" href="#">About</a>
+      </li>
+    </ul>
+    <div class="row-cart">
+    <form class="style-center form-inline my-2 my-lg-0">
+      <h5>{{sum + sumOfSame}}$</h5>
+      <img routerLink="/myplaylist" [state]="{product:cart}" src="https://img.icons8.com/nolan/64/playlist.png" alt="cart"/>
+      <span class="text-style badge" *ngIf="cart.length > 0">{{cart.length + cartOfSame.length}}</span>    
+    </form>
+
+    </div>
+  </div>
+</nav>
+
+<router-outlet></router-outlet>

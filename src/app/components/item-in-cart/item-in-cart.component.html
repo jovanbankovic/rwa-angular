@@ -1,0 +1,30 @@
+<div class="row-album">
+    <div class="card" *ngFor="let data of cart" style="width: 18rem;">
+      <img src={{data.picture}} class="card-img-top" alt="...">
+      <div class="card-body">
+        <p class="card-text text-style">{{data.name}}</p>
+        <p class="card-text text-style">Author: {{data.author}}</p>
+        <p class="card-text text-style">Price: {{data.price}}$</p>
+        <div class="center-buttons">
+          <button class="btn btn-primary btn-sm mt-3 mb-2" (click)="goToUrl(data.link)">Listen to the album</button>
+          <button style="margin-left: 5px;" class="btn btn-primary btn-sm mt-3 mb-2" (click)="removeFromCart(data)">Remove from cart</button>
+        </div>
+      </div>
+      <div class="quantity">Quantity
+        <img src="https://img.icons8.com/material-sharp/24/000000/albums.png"/>
+        <span *ngFor="let same of cartOfSame">
+          <img *ngIf="data.id==same.id" src="https://img.icons8.com/material-sharp/24/000000/albums.png"/>
+        </span>
+      </div>
+    </div> 
+</div>
+
+<!--<div class="card" style="width: 18rem;">
+    <div class="card-body">
+      <h5 class="card-title">{{product.name}}</h5>
+      <h6 class="card-subtitle mb-2 text-muted">{{product.author}}</h6>
+      <p class="card-text">{{product.awards}}</p>
+      <a href="#" class="card-link">{{product.genre}}</a>
+      <a href="#" class="card-link">{{product.rate}}</a>
+    </div>
+  </div>-->

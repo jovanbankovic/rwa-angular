@@ -1,0 +1,13 @@
+<h1 class="text-align">Top rated artist's</h1>
+<ul class="row-top list-group list-group-flush">
+    <li class="background-li list-group-item"  *ngFor="let item of items">
+      <div class="card" style="width: 15rem;">
+        <div class="card-body">
+          <h5 class="card-title">{{item.id}}. place</h5>
+          <h6 class="card-subtitle mb-2 text-muted">Name: {{item.name}}</h6>
+          <p class="card-text">Music genre: {{item.genre}}</p>
+          <p class="card-text">Rating: {{item.rating}}★</p>
+        </div>
+      </div>
+    </li>
+</ul>

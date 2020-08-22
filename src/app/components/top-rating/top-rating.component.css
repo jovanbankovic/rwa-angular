@@ -1,0 +1,28 @@
+.background-li
+{
+    margin: 5px;
+    background-color: transparent;
+    border: 1px solid transparent;
+}
+
+.row-top
+{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center
+}
+
+.text-align
+{
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    letter-spacing: 1px;
+    margin-left: 10px;
+    text-align: center;
+}
+
+.card
+{
+    background: linear-gradient(75deg, rgb(204, 255, 255), rgb(255, 204, 255));
+}

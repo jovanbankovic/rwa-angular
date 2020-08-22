@@ -1,0 +1,25 @@
+.search-div
+{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.music-preview
+{
+    display: flex;
+}
+
+.text-research
+{
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    font-size: 18px;
+    letter-spacing: 1px;
+    text-align: center;
+}
+
+.select-input
+{
+    font-family: 'Lucida Sans';
+}
