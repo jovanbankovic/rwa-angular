@@ -13,10 +13,3 @@ export interface MusicItem
     rate: number;
     link: string;
 }
-
-export class MusicItemInCart {
-    constructor(
-      public music: MusicItem,
-      public countOfSameItem: number
-    ) {}
-  }

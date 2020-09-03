@@ -21,22 +21,12 @@ export class MusicService {
 
   constructor(private http: HttpClient) {}
 
-  // tslint:disable-next-line:typedef
-  private handleError<T>(operation = 'operation', result?: T) {
-    return (error: any): Observable<T> => { return of(result as T); }; }
-
   getAllMusicItemsFromGenres$(musicGenres: string): Observable<Array<MusicItem>> {
     if (musicGenres === MusicService.ALL_GENRES) { return this.getAllMusicItems$(); }
     return this.http.get<Array<MusicGenre>>(
         `${this.musicGenresUrl}/?name=${musicGenres}`
       )
       .pipe(
-        catchError(
-          this.handleError<Array<MusicGenre>>(
-            'getAllMusicItemsFrom',
-            new Array<MusicItem>()
-          )
-        ),
         concatAll(),
         switchMap((producer: MusicGenre) =>
           this.http.get<Array<MusicItem>>(
@@ -53,29 +43,13 @@ export class MusicService {
 
   getAllMusicItems$(): Observable<Array<MusicItem>> {
     return this.http
-      .get<Array<MusicItem>>(this.musicItemsUrl)
-      .pipe(
-        catchError(
-          this.handleError<Array<MusicItem>>(
-            'getAllMusicItems',
-            new Array<MusicItem>()
-          )
-        )
-      );
+      .get<Array<MusicItem>>(this.musicItemsUrl);
   }
 
   getMusicItemByPattern$(pattern: string): Observable<Array<MusicItem>> {
     if (!pattern.trim()) { return of(new Array<MusicItem>()); }
     return this.http
-      .get<Array<MusicItem>>(`${this.musicItemsUrl}/?name=${pattern}`)
-      .pipe(
-        catchError(
-          this.handleError<Array<MusicItem>>(
-            'searchMusicItem',
-            new Array<MusicItem>()
-          )
-        )
-      );
+      .get<Array<MusicItem>>(`${this.musicItemsUrl}/?name=${pattern}`);
   }
 
   getAllMusicGenres$(): Observable<Array<string>> {
@@ -88,24 +62,7 @@ export class MusicService {
           );
           console.log(allMusicGenresNames);
           return allMusicGenresNames;
-        }),
-        catchError(
-          this.handleError<Array<string>>(
-            'getMusicGenres',
-            new Array<string>()
-          )
-        )
-      );
-  }
-
-  getMusicItemInformation$(musicItemId: number): Observable<MusicGenre> {
-    return this.http
-      .get<Array<MusicGenre>>(
-        `${this.musicItemsUrl}/?id=${musicItemId}`
-      )
-      .pipe(
-        concatAll(),
-        filter((info: MusicItem) => info.id === musicItemId)
-      );
+        }
+      ));
   }
 }
