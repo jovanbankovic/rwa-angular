@@ -17,12 +17,16 @@ export function ShopReducer(state = initialState, action: ActionsUnion)
         case ActionTypes.Add:
             if(existItem(state, action.payload))
             {
+                console.log(action.payload);
                 return {
                     ...state,
                     duplicateitems: [...state.duplicateitems, action.payload ]
                 }
             }
-            return { ...state, cart: [...state.cart, action.payload ]};
+            else
+            {
+                return { ...state, cart: [...state.cart, action.payload ]};
+            }
         case ActionTypes.Remove:
             return { ...state, 
             cart: [...state.cart.filter(item => item.name !== action.payload.name )],

@@ -20,8 +20,6 @@ export class MyCartItemComponent implements OnInit {
 
     ngOnInit()
     {
-      this.state$ = this.activatedRoute.paramMap.pipe(map(() => window.history.state))
-      this.state$.subscribe(x=>this.items = x['product'])
     }   
 
    

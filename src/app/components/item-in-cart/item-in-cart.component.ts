@@ -12,8 +12,9 @@ import { Store, select } from '@ngrx/store';
 export class ItemInCartComponent implements OnInit {
   @Input() product: MusicItem;
   inCart: boolean;
-  constructor(@Inject(DOCUMENT) private document: Document, private store: Store<{items: []; cart: []}>) { 
+  constructor(@Inject(DOCUMENT) private document: Document, private store: Store<{items: []; cart: [];}>) { 
     store.pipe(select('shop')).subscribe(data=>{
+    console.log(data);
     this.cart=data['cart']
     this.cartOfSame=data['duplicateitems'];
   })
@@ -22,7 +23,7 @@ export class ItemInCartComponent implements OnInit {
   cartOfSame=[];
   cart=[];
 
-  ngOnInit(): void {
+  ngOnInit(){
   }
 
   goToUrl(url: string): void {

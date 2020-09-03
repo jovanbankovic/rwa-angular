@@ -9,7 +9,7 @@ import { MusicItem } from '../models/music-item.model';
 })
 export class AppComponent {
   title = 'Soundable';
-  constructor(private store: Store<{items: []; cart: [];}>){
+  constructor(private store: Store<{items: []; cart: []; shop}>){
     store.pipe(select('shop')).subscribe(data=> {(this.cart = data['cart'])
       this.cartOfSame=data['duplicateitems'];
       this.sum = 0;

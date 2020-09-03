@@ -1,6 +1,7 @@
 .card
 {
     margin-left: 5px;
+    background: linear-gradient(75deg, rgb(204, 255, 255), rgb(255, 204, 255));
 }
 
 .center-buttons
@@ -8,4 +9,22 @@
     display: flex;
     align-items: center;
     justify-content: center;
+}
+
+.row-album
+{
+    display: flex;
+    width: 100%;
+    background: linear-gradient(75deg, rgb(204, 255, 255), rgb(255, 204, 255));
+    justify-content: center;
+    align-items: center;
+    flex-direction: row;
+    flex-wrap: wrap;
+}
+
+.quantity
+{
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }

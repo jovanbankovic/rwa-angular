@@ -1,14 +1,13 @@
 <div class="row-album">
-    <div class="card" *ngFor="let data of cart" style="width: 18rem;">
-      <img src={{data.picture}} class="card-img-top" alt="...">
+    <div class="card" *ngFor="let data of cart">
+      <div class="card-header">
+        {{data.author}}
+      </div>
       <div class="card-body">
-        <p class="card-text text-style">{{data.name}}</p>
-        <p class="card-text text-style">Author: {{data.author}}</p>
-        <p class="card-text text-style">Price: {{data.price}}$</p>
-        <div class="center-buttons">
-          <button class="btn btn-primary btn-sm mt-3 mb-2" (click)="goToUrl(data.link)">Listen to the album</button>
-          <button style="margin-left: 5px;" class="btn btn-primary btn-sm mt-3 mb-2" (click)="removeFromCart(data)">Remove from cart</button>
-        </div>
+        <h5 class="card-title">{{data.name}}</h5>
+        <p class="card-text">{{data.price}}$</p>
+        <button href="#" class="btn btn-primary btn-sm mt-3 mb-2" (click)="goToUrl(data.link)">Listen to the album</button>
+        <button style="margin-left: 5px;" class="btn btn-primary btn-sm mt-3 mb-2" (click)="removeFromCart(data)">Remove from cart</button>
       </div>
       <div class="quantity">Quantity
         <img src="https://img.icons8.com/material-sharp/24/000000/albums.png"/>
@@ -16,7 +15,7 @@
           <img *ngIf="data.id==same.id" src="https://img.icons8.com/material-sharp/24/000000/albums.png"/>
         </span>
       </div>
-    </div> 
+    </div>
 </div>
 
 <!--<div class="card" style="width: 18rem;">
